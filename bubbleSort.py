@@ -4,12 +4,11 @@ import json
 
 def bubbleSort(tableToSort):
     result = tableToSort
-    for index in range(len(result) - 1, 0, -1):
-        for i in range(index):
-            if result[i] > result[i + 1]:
-                tmp = result[i]
-                result[i] = result[i + 1]
-                result[i + 1] = tmp
+    for i in range(0, len(result) - 1):
+        for j in range(0, len(result)-i-1):
+            if result[j] > result[j + 1]:
+                result[j], result[j+1] = result[j+1], result[j]
+                
     return result
 
 file = open(sys.argv[1])
